@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --orange: #ff6000;
+  --orange-2: #ff4800;
+  --dark-grey: #495057;
+  --light-gray: #f8f8f8;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #023e8a;
+  --blue-2: #03045e;
+  --blue-3: #caf0f8;
+}
+
+/* Header */
+header,
+header::before,
+header::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-grey);
+}
+
+li, a, button {
+  font-family: "Josefin Sans", sans-serif ;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 16px 8px 16px;
+}
+
+img.logo {
+  width: 200px;
+  height: 75px;
+  margin: 0 auto -24px 8px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.navbar {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.navbar li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar li a:hover {
+  color: var(--orange);
+}
+
+button {
+  padding: 9px 25px;
+  background-color: var(--orange);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: var(--orange-2);
+}
+
+/* First section */
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.main-section {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  background-color: var(--blue-3);
+  color: var(--white);
+  padding: 0;
+  height: 550px;
+}
+
+
+.middle-section {
+  background-color: var(--orange);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.middle-section h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.middle-section p {
+  font-size: 16px;
+}
+
+.bottom-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-2);
+}
+
+.section-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+}
