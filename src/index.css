@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 :root {
   --orange: #f26419;
   --orange-2: #ff4800;
@@ -94,6 +92,11 @@ body {
   height: 700px;
 }
 
+.top-section {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .middle-section {
   background-color: var(--orange);
   padding: 12px 16px;
@@ -147,10 +150,10 @@ body {
 /* GDPR section */
 .gdpr-section {
   font-family: "Josefin Sans", sans-serif;
-  display: grid;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /*height: 100vh;*/
   width: 100%;
-  max-width: 1400px;
   box-sizing: border-box;
   text-align: center;
   background-color: var(--white);
@@ -168,7 +171,7 @@ body {
 
 .title {
   font-size: 32px;
-  margin-bottom: -25px;
+  margin-bottom: 32px;
   color: var(--dark-grey);
   font-weight: normal;
   width: 100%;
@@ -177,6 +180,7 @@ body {
 .content-box {
   background-color: var(--light-gray);
   padding: 50px 150px;
+  margin-bottom: 32px;
   border-radius: 5px;
   width: fit-content;
   height: max-content;
@@ -281,6 +285,7 @@ h3.features {
   background-repeat: no-repeat;
   background-size: 740px 600px;
   z-index: 50;
+  /*border: 70px solid var(--orange);*/
 }
 
 .functions-container {
