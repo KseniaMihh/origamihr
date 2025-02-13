@@ -152,7 +152,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   display: flex;
   flex-direction: column;
-  /*height: 100vh;*/
   width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -276,21 +275,16 @@ h3.features {
 
 /* Functions section */
 .functions-section {
-  position: relative;
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
   color: var(--dark-grey);
   background-color: var(--white);
-  background-image: url("/public/view.png");
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 740px 600px;
-  z-index: 50;
-  /*border: 70px solid var(--orange);*/
+  border-bottom: 70px solid var(--orange);
 }
 
 .functions-container {
-  max-width: 1300px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h2.functions {
@@ -307,35 +301,23 @@ h3.functions {
   text-align: center;
 }
 
-.row {
+.column-full {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
 }
 
-.column {
+.column-1 {
   flex: 1;
-  margin-right: 40px;
+  margin: 0 40px 0 100px;
 }
 
 .column:last-child {
   margin-right: 0;
 }
 
-.column-full {
-  width: 100%;
-}
-
 h4.functions {
   font-size: 26px;
   margin-top: 30px;
   margin-bottom: 10px;
-  font-weight: 500;
-}
-
-h4.functions-2 {
-  font-size: 26px;
-  margin: 70px 0 10px;
   font-weight: 500;
 }
 
@@ -349,3 +331,31 @@ ul.functions-list {
   margin-bottom: 10px;
   font-size: 24px;
 }
+
+.column-2 {
+  flex: 1;
+  margin: 0 100px 0 40px;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  z-index: 1;
+}
+
+.functions-img {
+  display: flex;
+  width: 60%;
+  height: auto;
+}
+
+
+
