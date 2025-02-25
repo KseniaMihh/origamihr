@@ -9,6 +9,10 @@
   --blue-3: #82c0cc;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
 /* Header */
 header,
 header::before,
@@ -335,23 +339,32 @@ ul.functions-list {
 }
 
 .column-2 {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
   margin: 0 40px 0 40px;
+  position: relative;
 }
 
 .list-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .img-container {
   display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .functions-img {
-  display: flex;
-  width: 60%;
+  width: 80%;
   height: auto;
+  margin: -40px;
 }
 
 /* Footer */
