@@ -1,0 +1,31 @@
+button {
+    padding: 10px 60px;
+    background-color: var(--orange);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: var(--orange-2);
+}
+
+.btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--blue-2);
+}
+
+.btn-secondary {
+    padding: 10px 60px;
+}

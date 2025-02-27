@@ -9,11 +9,11 @@ const Footer = () => (
             </div>
             <hr />
             <div className="footer-logo">
-                <img src="/public/Logo.svg" alt="logo" />
+                <img src="/Logo.svg" alt="logo" />
             </div>
             <div className="social-media">
                 <a href="https://www.facebook.com/origamihr" target="_blank" rel="noopener noreferrer">
-                    <img src="/public/facebook-logo.png" alt="Facebook" style={{ color: 'var(--orange)', height: '60px', width: '60px' }} />
+                    <img src="/facebook-logo.png" alt="Facebook" style={{ color: 'var(--orange)', height: '60px', width: '60px' }} />
                 </a>
             </div>
             <p style={{ fontSize: '16px' }}>&copy 2025 All Rights Reserved. Origami HR® is a registered trademark of Bulchi IT AG</p>

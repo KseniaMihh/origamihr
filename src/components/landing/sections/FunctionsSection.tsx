@@ -36,7 +36,7 @@ const FunctionsSection = () => (
                         </ul>
                     </div>
                     <div className="img-container">
-                        <img src="/public/view.png" alt="Optimized View" className="functions-img" />
+                        <img src="/view.png" alt="Optimized View" className="functions-img" />
                     </div>
                 </div>
             </div>

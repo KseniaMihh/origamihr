@@ -1,6 +1,6 @@
 const Header = () => (
     <header>
-        <img className="logo" src="/public/Logo.svg" alt="logo" />
+        <img className="logo" src="/Logo.svg" alt="logo" />
         <nav>
             <ul className="navbar">
                 <li><a href="#">Features</a></li>
