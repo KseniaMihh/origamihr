@@ -1,21 +1,54 @@
-const GdprSection = () => (
-    <section className="gdpr-section">
-        <div className="logo-container">
-            <img src="/lock.png" alt="Logo Lock" className="logo-lock" />
+import {CSSProperties} from "react";
+
+const gdprSection: CSSProperties = {
+    fontFamily: 'Josefin Sans',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    boxSizing: 'border-box',
+    textAlign: 'center',
+    backgroundColor: 'var(--white)',
+}
+
+const title: CSSProperties = {
+    fontSize: '32px',
+    marginBottom: '32px',
+    color: 'var(--dark-grey)',
+    fontWeight: 'normal',
+    width: '100%',
+}
+
+const contentBox: CSSProperties = {
+    backgroundColor: 'var(--light-gray)',
+    padding: '50px 150px',
+    marginBottom: '32px',
+    borderRadius: '5px',
+    width: 'fit-content',
+    height: 'max-content',
+    justifySelf: 'center',
+}
+
+const GdprSection = () => {
+    return (
+
+    <section style={gdprSection} className="gdpr-section">
+        <div style={{marginTop: '35px', alignItems: 'center'}} className="logo-container">
+            <img style={{width: '150px', height: '150px'}} src="/lock.png" alt="Logo Lock" className="logo-lock" />
         </div>
-        <h2 className="title">Origami HR is the GDPR compliant HR tool</h2>
+        <h2 style={title} className="title">Origami HR is the GDPR compliant HR tool</h2>
         <div>
-            <div className="content-box">
-                <div className="flag-container">
-                    <img src="/de_flag.png" alt="Germany Flag" className="flag" />
-                    <img src="/eu_flag.png" alt="EU Flag" className="flag" />
+            <div style={contentBox} className="content-box">
+                <div style={{display: 'flex', justifyContent: 'center', marginBottom: '20px'}} className="flag-container">
+                    <img style={{width: '85px', margin: '0 10px'}} src="/de_flag.png" alt="Germany Flag" className="flag" />
+                    <img style={{width: '85px', margin: '0 10px'}} src="/eu_flag.png" alt="EU Flag" className="flag" />
                 </div>
-                <p className="description">Our European secure data center is located in Frankfurt, Germany</p>
-                <p className="description">We offer a speedy and reliable data deletion service</p>
-                <p className="description">Built-in reminding service to maintain and update client data according to GDPR</p>
+                <p style={{fontSize: '24px', margin: '24px 0', color: 'var(--dark-grey'}} className="description">Our European secure data center is located in Frankfurt, Germany</p>
+                <p style={{fontSize: '24px', margin: '24px 0', color: 'var(--dark-grey'}} className="description">We offer a speedy and reliable data deletion service</p>
+                <p style={{fontSize: '24px', margin: '24px 0', color: 'var(--dark-grey'}} className="description">Built-in reminding service to maintain and update client data according to GDPR</p>
             </div>
         </div>
     </section>
-);
+    );
+};
 
 export default GdprSection;

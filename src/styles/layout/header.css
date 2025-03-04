@@ -1,0 +1,53 @@
+header,
+header::before,
+header::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-grey);
+}
+
+a, button {
+    font-family: "Josefin Sans", sans-serif ;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+img.logo {
+    width: 200px;
+    height: 75px;
+    margin: 0 auto -24px 8px;
+    z-index: 50;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.navbar {
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.navbar li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navbar li a:hover {
+    color: var(--orange);
+}
