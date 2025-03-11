@@ -1,7 +1,12 @@
-@import 'styles/button.css';
+@import 'styles/components/button.css';
 @import 'styles/layout/footer.css';
-@import 'styles/colors.css';
+@import 'styles/variables/colors.css';
 @import 'styles/layout/header.css';
+@import 'styles/variables/typography.css';
+
+:root {
+  font-family: "Josefin Sans", sans-serif;
+}
 
 
 body {
@@ -11,12 +16,6 @@ body {
   height: 100vh;
 }
 
-
-/* Main section */
-body {
-  margin: 0;
-  font-family: "Josefin Sans", sans-serif;
-}
 
 
 

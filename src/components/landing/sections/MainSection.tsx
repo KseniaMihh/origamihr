@@ -21,13 +21,13 @@ const MainSection = () => {
         <section style={mainSection} className="main-section">
             <div style={{display:'flex', justifyContent: 'flex-end'}} className="top-section">
                 <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px'}}>
-                    <p style={{color: 'var(--dark-grey)', fontSize: '24px'}}>Hosted in Germany</p>
+                    <p>Hosted in Germany</p>
                     <img src="/lock.png" alt="lock" style={{width: '48px', height: '48px', padding: '16px'}}/>
                 </div>
             </div>
             <div style={{backgroundColor: 'var(--orange)', padding: '12px 16px', textAlign: 'left'}} className="middle-section">
-                <h1 style={{fontSize: '34px', marginBottom: '40px', padding: '0 16px', fontWeight: 'normal'}}>TIME AND LEAVE MANAGEMENT FOR HR<br/> WARRIORS</h1>
-                <p style={{fontSize: '24px', padding: '0 16px'}}>Grow your business efficient with knowing what<br/> happens on the workflow, and how it happens!</p>
+                <h1>TIME AND LEAVE MANAGEMENT FOR HR<br/> WARRIORS</h1>
+                <p style={{padding: '0 16px', color: 'var(--white)'}}>Grow your business efficient with knowing what<br/> happens on the workflow, and how it happens!</p>
             </div>
             <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '30px'}} className="bottom-section">
                 <button onClick={onScheduleClick} className="btn btn-primary">SCHEDULE DEMO</button>

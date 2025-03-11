@@ -1,20 +1,24 @@
+import {useNavigate} from "react-router";
 
 const Header = () => {
+    const navigate = useNavigate();
     const onSignUpClick = () => {
         console.log('Sign Up');
+        navigate('/users');
     }
+
     return  (
     <header>
         <img className="logo" src="/Logo.svg" alt="logo"/>
         <nav>
             <ul className="navbar">
-                <li><a href="#">Features</a></li>
+                <li><a href="/users">Features</a></li>
                 <li><a href="#">Log In</a></li>
             </ul>
         </nav>
-        <a className="cta" href="#">
+        <div className="cta">
             <button onClick={onSignUpClick} >SIGN UP</button>
-        </a>
+        </div>
     </header>
     );
 };

@@ -1,7 +1,9 @@
 
 const DashboardPage = () => (
     <>
-
+    <div>
+        Hello
+    </div>
     </>
 );
 
