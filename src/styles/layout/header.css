@@ -16,9 +16,9 @@ a, button {
 }
 
 header {
-    position: relative;
+    /*position: relative;*/
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     justify-content: flex-end;
     align-items: center;
     padding: 8px 16px;
@@ -42,10 +42,13 @@ img.logo {
 .navbar li {
     display: inline-block;
     padding: 0 20px;
+    position: relative;
+    top: 5px;
 }
 
 .navbar li a {
     transition: all 0.3s ease 0s;
+
 }
 
 .navbar li a:hover {

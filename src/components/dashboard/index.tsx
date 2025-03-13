@@ -1,10 +1,11 @@
+import Dashboard from "../dashboard/featuresPage.tsx";
+import Footer from "../../shared/components/Footer.tsx";
 
 const DashboardPage = () => (
     <>
-    <div>
-        Hello
-    </div>
+        <Dashboard />
+        <Footer/>
     </>
-);
+)
 
 export default DashboardPage;
