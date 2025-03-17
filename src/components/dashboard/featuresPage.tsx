@@ -1,5 +1,6 @@
 import {CSSProperties} from "react";
 import FunctionsSection from "../landing/sections/FunctionsSection.tsx";
+import Footer from "../../shared/components/Footer.tsx";
 
 const block: CSSProperties = {
     textAlign: 'center',
@@ -36,6 +37,8 @@ const FeaturesPage = () => {
                 showH3={false}
                 h2Style={{backgroundColor: 'var(--light-gray)', padding: '20px', margin: '50px 210px 20px'}}
             />
+            
+            <Footer />
         </>
 
     );

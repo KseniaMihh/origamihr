@@ -1,0 +1,25 @@
+body {
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: var(--white);
+    padding: 20px;
+    width: 100%;
+    background-clip: border-box;
+    border: 1px solid #c8ced3;
+    position: relative;
+}
+
+.login-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 8px;
+}
+
+.h1 {
+    margin-bottom: 8px;
+}

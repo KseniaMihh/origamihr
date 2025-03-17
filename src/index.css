@@ -3,6 +3,7 @@
 @import 'styles/variables/colors.css';
 @import 'styles/layout/header.css';
 @import 'styles/variables/typography.css';
+@import 'styles/components/login.css';
 
 :root {
   font-family: "Josefin Sans", sans-serif;

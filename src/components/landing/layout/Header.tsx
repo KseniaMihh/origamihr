@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router";
+import {Link, useNavigate} from "react-router";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -11,8 +11,8 @@ const Header = () => {
         <img className="logo" src="/Logo.svg" alt="logo"/>
         <nav>
             <ul className="navbar">
-                <li><a href="/features">Features</a></li>
-                <li><a href="#">Log In</a></li>
+                <li><Link to="/features">Features</Link></li>
+                <li><Link to="/login">Log In</Link></li>
             </ul>
         </nav>
         <div className="cta">
