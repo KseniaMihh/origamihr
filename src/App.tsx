@@ -1,6 +1,6 @@
-import LandingPage from "./components/landing/index.tsx";
+import LandingPage from "./components/landing";
 import {Route, Routes} from "react-router";
-import LoginPage from "./components/dashboard/LoginPage";
+import LoginPage from "./components/dashboard/loginPage";
 import FeaturesPage from "./components/dashboard/featuresPage";
 
 const App = () => (

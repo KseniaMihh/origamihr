@@ -35,7 +35,7 @@ const FeaturesPage = () => {
             <FunctionsSection
                 h2 ="All plans come along with these advantages"
                 showH3={false}
-                h2Style={{backgroundColor: 'var(--light-gray)', padding: '20px', margin: '50px 210px 20px'}}
+                h2Style={{backgroundColor: 'var(--light-grey)', padding: '20px', margin: '50px 210px 20px'}}
             />
             
             <Footer />

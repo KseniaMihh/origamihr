@@ -16,7 +16,7 @@ const Header = () => {
             </ul>
         </nav>
         <div className="cta">
-            <button onClick={onSignUpClick} >SIGN UP</button>
+            <button onClick={onSignUpClick}>SIGN UP</button>
         </div>
     </header>
     );

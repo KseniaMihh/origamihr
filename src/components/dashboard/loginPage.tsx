@@ -21,10 +21,11 @@ console.log('Form Data:',formState);
 }
 
 return (
+    <div className="main">
     <div className="login-container">
-        <img className="login-logo" src="/Logo.svg" alt="Login Logo"/>
-        <h1 style={{marginBottom: '8px'}}>Log In</h1>
-        <p>Sign in to your ORIGAMI HR account</p>
+        <img className="login-logo" src="/Logo_dark.svg" alt="Login Logo"/>
+        <h2 style={{margin: '0 0 8px 0', padding: '0', textWrap: 'nowrap', fontWeight: 'normal'}}>Log In</h2>
+        <p style={{marginBottom: '10px', marginTop: '10px', fontSize: '18px'}}>Sign in to your ORIGAMI HR account</p>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -50,6 +51,7 @@ return (
                 <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    style={{backgroundColor: 'transparent', border: 'none', cursor: 'pointer', fontSize: '14px', color: 'var(--dark-grey)'}}
                 >
                     {showPassword ? 'Hide Password' : 'Show Password'}
                 </button>
@@ -66,9 +68,10 @@ return (
             </div>
             <button type="submit">LOGIN</button>
         </form>
-        <p>
-            <a href="#forgot-password">Forgot your password?</a>
+        <p style={{margin: '10px 0 0 0'}}>
+            <a style={{color: 'var(--orange)', textDecoration: 'none', fontSize: '14px'}} href="#forgot-password">Forgot your password?</a>
         </p>
+        </div>
         </div>
 );
 };

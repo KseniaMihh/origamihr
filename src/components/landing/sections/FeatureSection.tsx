@@ -3,7 +3,7 @@ import {CSSProperties} from "react";
 const featureSection: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: 'var(--light-gray)',
+    backgroundColor: 'var(--light-grey)',
 }
 
 const FeatureSection = () => {

@@ -10,7 +10,7 @@ const gdprSection: CSSProperties = {
 }
 
 const contentBox: CSSProperties = {
-    backgroundColor: 'var(--light-gray)',
+    backgroundColor: 'var(--light-grey)',
     padding: '50px 150px',
     marginBottom: '32px',
     borderRadius: '5px',
