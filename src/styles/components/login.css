@@ -11,26 +11,49 @@
     flex-direction: column;
     align-items: flex-start;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
 
-.login-logo {
-    width: 150px;
-    margin-bottom: 10px;
-    align-self: flex-start;
+.login-container form {
+    width: 100%;
 }
 
+.login-logo {
+    width: 150px;
+    margin-bottom: 24px;
+}
 
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     width: 100%;
 }
 
 .form-group label {
     display: none;
+}
+
+.input-with-icon {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.input-with-icon input {
+    padding-left: 40px !important;
+    width: 100%;
 }
 
 .form-group input {
@@ -44,6 +67,27 @@
 
 .form-group input::placeholder {
     color: var(--dark-grey);
+}
+
+.error-input {
+    border-color: var(--error-color) !important;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+button[type="button"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--dark-grey);
+    display: flex;
+    justify-self: flex-end;
+    padding: 10px 0;
 }
 
 
