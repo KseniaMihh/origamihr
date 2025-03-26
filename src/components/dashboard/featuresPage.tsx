@@ -1,6 +1,7 @@
 import {CSSProperties} from "react";
 import FunctionsSection from "../landing/sections/FunctionsSection.tsx";
 import Footer from "../../shared/components/Footer.tsx";
+import Header from "../landing/layout/Header.tsx";
 
 const block: CSSProperties = {
     textAlign: 'center',
@@ -11,21 +12,10 @@ const block: CSSProperties = {
 }
 
 const FeaturesPage = () => {
-    const onSignUpClick = () => {}
     return (
 
         <>
-            <header>
-                <img className="logo" src="/Logo.svg" alt="logo"/>
-                <nav>
-                    <ul className="navbar">
-                        <li><a href="/login">Log In</a></li>
-                    </ul>
-                </nav>
-                <div className="cta">
-                    <button onClick={onSignUpClick}>SIGN UP</button>
-                </div>
-            </header>
+            <Header featuresPage={false}/>
 
             <div style={block}>
                 <h2 style={{color: 'var(--white)'}}>Unfold your HR potential</h2>

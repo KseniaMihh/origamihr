@@ -1,6 +1,10 @@
 import {Link, useNavigate} from "react-router-dom";
+interface HeaderProps {
+    featuresPage: boolean;
+}
 
-const Header = () => {
+
+const Header: React.FC<HeaderProps> = ({featuresPage}) => {
     const navigate = useNavigate();
     const onSignUpClick = () => {
         navigate('/features');
@@ -8,10 +12,10 @@ const Header = () => {
 
     return  (
     <header>
-        <img className="logo" src="/Logo.svg" alt="logo"/>
+        <img onClick={() => navigate('/')} className="logo" src="/Logo.svg" alt="logo"/>
         <nav>
             <ul className="navbar">
-                <li><Link to="/features">Features</Link></li>
+                {featuresPage && <li><Link to="/features">Features</Link></li>}
                 <li><Link to="/login">Log In</Link></li>
             </ul>
         </nav>

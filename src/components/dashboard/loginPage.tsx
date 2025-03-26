@@ -35,6 +35,7 @@ const LoginPage = () => {
     }
 
     const handleSubmit = (e: React.FormEvent) => {
+        console.log(formState);
         e.preventDefault();
         setError({});
 
@@ -57,7 +58,7 @@ const LoginPage = () => {
             <img className="login-logo" src="/Logo_dark.svg" alt="Login Logo"/>
             <h2 style={{margin: '0 0 8px 0', padding: '0', textWrap: 'nowrap', fontWeight: 'normal'}}>Log In</h2>
             <p style={{marginBottom: '10px', marginTop: '10px', fontSize: '16px'}}>Sign in to your ORIGAMI HR account</p>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <div className="input-with-icon">
@@ -71,7 +72,6 @@ const LoginPage = () => {
                             id="email"
                             value={formState.email}
                             onChange={(e) => setFormState({...formState, email: e.target.value})}
-                            required
                             placeholder="Email"
                             className={error.email ? 'error-input' : ''}
                         />
@@ -92,7 +92,7 @@ const LoginPage = () => {
                             value={formState.password}
                             onChange={(e) => setFormState({...formState, password: e.target.value})}
                             required
-                            placeholder="Password"
+                            placeholder="Enter password"
                             className={error.password ? 'error-input' : ''}
                         />
                     </div>
@@ -114,7 +114,7 @@ const LoginPage = () => {
                         Remember me
                     </label>
                 </div>
-                <button type="submit">LOGIN</button>
+                <button onClick={handleSubmit} type="submit">LOGIN</button>
             </form>
             <p style={{margin: '10px 0 0 0'}}>
                 <a style={{color: 'var(--orange)', textDecoration: 'none', fontSize: '14px'}} href="#forgot-password">Forgot your password?</a>
