@@ -1,5 +1,5 @@
 import {CSSProperties} from "react";
-
+import { useNavigate } from "react-router-dom";
 const mainSection: CSSProperties = {
     position: 'relative',
     display: 'grid',
@@ -11,11 +11,12 @@ const mainSection: CSSProperties = {
 }
 
 const MainSection = () => {
+    const navigate = useNavigate();
     const onScheduleClick = () => {
         console.log('Schedule Demo');
     }
     const onSignUpClick = () => {
-        console.log('Sign Up');
+        navigate('/signup');
     }
     return (
         <section style={mainSection} className="main-section">

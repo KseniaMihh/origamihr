@@ -114,7 +114,7 @@ const LoginPage = () => {
                         Remember me
                     </label>
                 </div>
-                <button onClick={handleSubmit} type="submit">LOGIN</button>
+                <button onClick={handleSubmit} type="submit" className="login-button">LOGIN</button>
             </form>
             <p style={{margin: '10px 0 0 0'}}>
                 <a style={{color: 'var(--orange)', textDecoration: 'none', fontSize: '14px'}} href="#forgot-password">Forgot your password?</a>

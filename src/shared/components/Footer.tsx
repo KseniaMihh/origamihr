@@ -1,9 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
+    const navigate = useNavigate();
     const onScheduleClick = () => {
         console.log('Schedule Demo');
-    }
-    const onSignUpClick = () => {
-        console.log('Sign Up');
     }
     return (
     <footer>
@@ -12,7 +12,7 @@ const Footer = () => {
             <p style={{color: 'var(--white)'}}>Ask us for a customized solution or create your FREE account</p>
             <div className="footer-buttons">
                 <button onClick={onScheduleClick} className="btn btn-primary">SCHEDULE DEMO</button>
-                <button onClick={onSignUpClick} className="btn btn-secondary">SIGN UP</button>
+                <button onClick={() => navigate('/signup')} className="btn btn-secondary">SIGN UP</button>
             </div>
             <hr/>
             <div className="footer-logo">

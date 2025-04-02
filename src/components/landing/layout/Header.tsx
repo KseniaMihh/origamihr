@@ -1,14 +1,14 @@
-import {Link, useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 interface HeaderProps {
     featuresPage: boolean;
+    SignUp: boolean;
 }
 
 
-const Header: React.FC<HeaderProps> = ({featuresPage}) => {
+const Header: React.FC<HeaderProps> = ({featuresPage, SignUp}) => {
     const navigate = useNavigate();
-    const onSignUpClick = () => {
-        navigate('/features');
-    }
 
     return  (
     <header>
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({featuresPage}) => {
             </ul>
         </nav>
         <div className="cta">
-            <button onClick={onSignUpClick}>SIGN UP</button>
+            {SignUp && <button onClick={() => navigate('/signup')}>SIGN UP</button>}
         </div>
     </header>
     );

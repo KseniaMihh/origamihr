@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: white;
+    background-color: var(--white);
     padding: 30px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,7 +61,6 @@
     padding: 12px;
     font-size: 14px;
     border: 1px solid var(--dark-grey);
-    border-radius: 4px;
     box-sizing: border-box;
 }
 
@@ -70,14 +69,9 @@
 }
 
 .error-input {
-    border-color: var(--error-color) !important;
+    border-color: var(--red) !important;
 }
 
-.error-message {
-    color: var(--error-color);
-    font-size: 12px;
-    margin-top: 4px;
-}
 
 button[type="button"] {
     background-color: transparent;
@@ -100,9 +94,8 @@ label {
     font-size: 14px;
 }
 
-button[type="submit"] {
+button[type="submit"], .login-button {
     width: 100%;
-    border-radius: 4px;
     margin-top: 16px;
     margin-bottom: 16px;
 }

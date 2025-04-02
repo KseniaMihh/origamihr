@@ -4,7 +4,7 @@ import Footer from "../../shared/components/Footer.tsx";
 
 const LandingPage = () => (
     <>
-        <Header featuresPage={true}/>
+        <Header featuresPage={true} SignUp={true}/>
         <LandingSections />
         <Footer />
     </>

@@ -15,7 +15,7 @@ const FeaturesPage = () => {
     return (
 
         <>
-            <Header featuresPage={false}/>
+            <Header featuresPage={false} SignUp={true}/>
 
             <div style={block}>
                 <h2 style={{color: 'var(--white)'}}>Unfold your HR potential</h2>
