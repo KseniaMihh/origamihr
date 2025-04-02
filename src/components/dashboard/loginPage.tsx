@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import '../../styles/components/login.css';
+import {useNavigate} from "react-router-dom";
 
 interface LoginError {
     email?: string;
@@ -52,10 +53,12 @@ const LoginPage = () => {
         }
     };
 
+    const navigate = useNavigate();
+
     return (
         <div className="main">
         <div className="login-container">
-            <img className="login-logo" src="/Logo_dark.svg" alt="Login Logo"/>
+            <img onClick={() => navigate('/')} className="login-logo" src="/Logo_dark.svg" alt="Login Logo"/>
             <h2 style={{margin: '0 0 8px 0', padding: '0', textWrap: 'nowrap', fontWeight: 'normal'}}>Log In</h2>
             <p style={{marginBottom: '10px', marginTop: '10px', fontSize: '16px'}}>Sign in to your ORIGAMI HR account</p>
             <form>
