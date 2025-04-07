@@ -1,94 +1,17 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState} from 'react';
 import { useUser } from '../../context/UserContext';
 import './SignUp.css';
 import Header from '../landing/layout/Header';
 
-interface SignUpContextType {
-  email: string;
-  password: string;
-  confirmPassword: string;
-  error: {
-    email?: string;
-    password?: string;
-    confirmPassword?: string;
-  };
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent) => void;
-}
-
-const SignUpContext = createContext<SignUpContextType | null>(null);
-
-const useSignUp = () => {
-  const context = useContext(SignUpContext);
-  if (!context) {
-    throw new Error('useSignUp must be used within a SignUpProvider');
-  }
-  return context;
-};
 
 const SignUp: React.FC = () => {
-  const { setUserData } = useUser();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState<{
-    email?: string;
-    password?: string;
-    confirmPassword?: string;
-  }>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    if (id === 'email') setEmail(value);
-    if (id === 'password') setPassword(value);
-    if (id === 'confirmPassword') setConfirmPassword(value);
-    };
-
-
-  const handleSubmit = (e: React.FormEvent) => {
-    console.log(email, password, confirmPassword);
-    e.preventDefault();
-
-    setError({});
-
-  let hasErrors = false;
-  const newErrors = { ...error };
-
-  if (!email) {
-    newErrors.email = 'Email is required';
-    hasErrors = true;
-  }
-  if (!password) {
-    newErrors.password = 'Password is required';
-    hasErrors = true;
-  }
-  if (!confirmPassword) {
-    newErrors.confirmPassword = 'Please confirm your password';
-    hasErrors = true;
-  }
-
-  if (hasErrors) {
-    setError(newErrors);
-    return;
-  }
-
-
-  setUserData(email, password);
-  };
-
-  const contextValue: SignUpContextType = {
-    email,
-    password,
-    confirmPassword,
-    error,
-    handleChange,
-    handleSubmit,
-  };
 
   return (
-    <SignUpContext.Provider value={contextValue}>
+    <>
       <Header featuresPage={true} SignUp={false} />
-      <div className="signup-page">
+        <div className="signup-page">
+      <div style={{justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center", height: "87vh"}}>
         <div className="signup-container">
           <h2 style={{margin: "0 0 8px 0", textAlign: "center", fontWeight: "normal"}}>Try Origami HR Free</h2>
           <p style={{margin: "0 0 15px 0", textAlign: "center", fontSize: "16px"}}>Immediate access. No credit card required.</p>
@@ -96,22 +19,69 @@ const SignUp: React.FC = () => {
           <SignUpForm />
         </div>
 
-
         <p className="terms">
           By signing up you accept our{' '}
           <a href="/privacy">Privacy & Terms</a>
         </p>
 
-        <p style={{display: "flex", alignSelf: "center", fontSize: "14px", color: "var(--white)"}}>
-        © 2025 All Rights Reserved. Origami HR® is a registered trademark of Bulchi IT AG
-        </p>
       </div>
-    </SignUpContext.Provider>
+        <p style={{display: "flex", alignSelf: "center", fontSize: "14px", color: "var(--white)"}}>
+            © 2025 All Rights Reserved. Origami HR® is a registered trademark of Bulchi IT AG
+        </p>
+        </div>
+          </>
   );
 };
 
 const SignUpForm: React.FC = () => {
-  const { email, password, confirmPassword, error, handleChange, handleSubmit } = useSignUp();
+    const { setUserData } = useUser();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState<{
+        email?: string;
+        password?: string;
+        confirmPassword?: string;
+    }>({});
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { id, value } = e.target;
+        if (id === 'email') setEmail(value);
+        if (id === 'password') setPassword(value);
+        if (id === 'confirmPassword') setConfirmPassword(value);
+    };
+
+
+    const handleSubmit = (e: React.FormEvent) => {
+        console.log(email, password, confirmPassword);
+        e.preventDefault();
+
+        setError({});
+
+        let hasErrors = false;
+        const newErrors = { ...error };
+
+        if (!email) {
+            newErrors.email = 'Email is required';
+            hasErrors = true;
+        }
+        if (!password) {
+            newErrors.password = 'Password is required';
+            hasErrors = true;
+        }
+        if (!confirmPassword) {
+            newErrors.confirmPassword = 'Please confirm your password';
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            setError(newErrors);
+            return;
+        }
+
+
+        setUserData(email, password);
+    };
 
   return (
       <form onSubmit={handleSubmit}>
