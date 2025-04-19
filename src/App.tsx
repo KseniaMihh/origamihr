@@ -1,8 +1,6 @@
 import LandingPage from "./components/landing";
 import {Route, Routes} from "react-router";
-import LoginPage from "./components/dashboard/loginPage";
-import FeaturesPage from "./components/dashboard/featuresPage";
-import SignUp from "./components/SignUp/SignUp";
+import { FeaturesPage, LoginPage, SignupPage } from "./components/dashboard";
 import { UserProvider } from "./context/UserContext";
 
 const App = () => (
@@ -11,7 +9,7 @@ const App = () => (
             <Route path="/" element={<LandingPage />} />
             <Route path="features" element={<FeaturesPage />} />
             <Route path="login" element={<LoginPage />} />
-            <Route path="signup" element={<SignUp />} />
+            <Route path="signup" element={<SignupPage />} />
         </Routes>
     </UserProvider>
 );
