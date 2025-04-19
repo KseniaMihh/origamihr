@@ -1,5 +1,6 @@
 import {CSSProperties} from "react";
 import { useNavigate } from "react-router-dom";
+
 const mainSection: CSSProperties = {
     position: 'relative',
     display: 'grid',

@@ -1,5 +1,5 @@
 import React from 'react';
-import SignupForm from "../forms/signupForm.tsx";
+import SignupForm from "../auth/forms/signupForm.tsx";
 import '../../styles/components/signup.css';
 import Header from '../landing/layout/Header.tsx';
 
@@ -23,7 +23,7 @@ const SignupPage: React.FC = () => {
         </p>
 
       </div>
-        <p style={{display: "flex", alignSelf: "center", fontSize: "14px", color: "var(--white)", padding: "16px"}}>
+        <p style={{display: "flex", alignSelf: "center", fontSize: "14px", color: "var(--white)", padding: "16px 30px"}}>
             © 2025 All Rights Reserved. Origami HR® is a registered trademark of Bulchi IT AG
         </p>
         </div>

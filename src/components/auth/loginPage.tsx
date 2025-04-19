@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import '../../styles/components/login.css';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../../context/UserContext.tsx";
 
 interface LoginError {
     email?: string;
     password?: string;
+    general?: string;
 }
 
 interface LoginFormState {
@@ -14,6 +16,8 @@ interface LoginFormState {
 }
 
 const LoginPage = () => {
+    const navigate = useNavigate();
+    const { login, checkUserExists } = useUser();
     const [formState, setFormState] = useState<LoginFormState>({
         email: '',
         password: '',
@@ -21,6 +25,7 @@ const LoginPage = () => {
     });
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [error, setError] = useState<LoginError>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const validateEmail = (email: string) : string | undefined => {
         if (!email) return 'Email is required';
@@ -35,25 +40,47 @@ const LoginPage = () => {
         return undefined;
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
-        console.log(formState);
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError({});
+        setIsSubmitting(true);
 
         const emailError = validateEmail(formState.email);
-        if (emailError) {
-            setError((prevError: LoginError) => ({...prevError, email: emailError}));
+        const passwordError = validatePassword(formState.password);
+
+        const newErrors: LoginError = {};
+        if (emailError) newErrors.email = emailError;
+        if (passwordError) newErrors.password = passwordError;
+
+        if (Object.keys(newErrors).length > 0) {
+            setError(newErrors);
+            setIsSubmitting(false);
             return;
         }
 
-        const passwordError = validatePassword(formState.password);
-        if (passwordError) {
-            setError((prevError: LoginError) => ({...prevError, password: passwordError}));
-            return;
+        try {
+            const userExists = await checkUserExists(formState.email);
+            
+            if (!userExists) {
+                setError({ email: 'No account found with this email' });
+                setIsSubmitting(false);
+                return;
+            }
+
+            const success = await login(formState.email, formState.password);
+            
+            if (success) {
+                navigate('/dashboard');
+            } else {
+                setError({ password: 'Incorrect password' });
+            }
+        } catch (err) {
+            setError({ general: 'An error occurred during login. Please try again.' });
+            console.error('Login error:', err);
+        } finally {
+            setIsSubmitting(false);
         }
     };
-
-    const navigate = useNavigate();
 
     return (
         <div className="main">
@@ -61,7 +88,8 @@ const LoginPage = () => {
             <img onClick={() => navigate('/')} className="login-logo" src="/Logo_dark.svg" alt="Login Logo"/>
             <h2 style={{margin: '0 0 8px 0', padding: '0', textWrap: 'nowrap', fontWeight: 'normal'}}>Log In</h2>
             <p style={{marginBottom: '10px', marginTop: '10px', fontSize: '16px'}}>Sign in to your ORIGAMI HR account</p>
-            <form>
+            {error.general && <p className="error-message general-error">{error.general}</p>}
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <div className="input-with-icon">
@@ -77,6 +105,7 @@ const LoginPage = () => {
                             onChange={(e) => setFormState({...formState, email: e.target.value})}
                             placeholder="Email"
                             className={error.email ? 'error-input' : ''}
+                            disabled={isSubmitting}
                         />
                     </div>
                     {error.email && <p className="error-message">{error.email}</p>}
@@ -94,15 +123,16 @@ const LoginPage = () => {
                             id="password"
                             value={formState.password}
                             onChange={(e) => setFormState({...formState, password: e.target.value})}
-                            required
                             placeholder="Enter password"
                             className={error.password ? 'error-input' : ''}
+                            disabled={isSubmitting}
                         />
                     </div>
                     {error.password && <p className="error-message">{error.password}</p>}
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
+                        disabled={isSubmitting}
                     >
                         {showPassword ? 'Hide Password' : 'Show Password'}
                     </button>
@@ -113,11 +143,18 @@ const LoginPage = () => {
                         type="checkbox"
                         checked={formState.rememberMe}
                         onChange={(e) => setFormState({...formState, rememberMe: e.target.checked})}
+                        disabled={isSubmitting}
                         />
                         Remember me
                     </label>
                 </div>
-                <button onClick={handleSubmit} type="submit" className="login-button">LOGIN</button>
+                <button 
+                    type="submit" 
+                    className="login-button"
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? 'PROCESSING...' : 'LOGIN'}
+                </button>
             </form>
             <p style={{margin: '10px 0 0 0'}}>
                 <a style={{color: 'var(--orange)', textDecoration: 'none', fontSize: '14px'}} href="#forgot-password">Forgot your password?</a>
