@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# Origami HR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Front-end for Origami HR, a time and leave management tool: a marketing landing page, a features page, and a sign-up / login flow that leads to a simple dashboard. Built with React and TypeScript.
 
-Currently, two official plugins are available:
+This is a front-end only project. There is no backend: accounts are kept in the browser's `localStorage` to make the sign-up and login flow work end to end, so it is a demo of the UI and form logic, not a real authentication system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pages
 
-## Expanding the ESLint configuration
+| Route | Page |
+|---|---|
+| `/` | Landing page with hero, features, functions and GDPR sections |
+| `/features` | Overview of what every plan includes |
+| `/signup` | Sign-up form with validation |
+| `/login` | Login form with validation and show/hide password |
+| `/dashboard` | Welcome screen for the logged-in user |
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## What it covers
 
-- Configure the top-level `parserOptions` property like this:
+- Client-side routing with React Router
+- A user context (`UserContext`) that handles register, login and logout and persists users between visits
+- Form validation with per-field error messages: email format, minimum password length, "no account found" and "incorrect password" states
+- Reusable layout pieces (header, footer, buttons) with shared CSS variables for colours and typography
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech stack
+
+- React 19 and TypeScript
+- Vite 6
+- React Router 7
+- Plain CSS
+- ESLint with typescript-eslint
+
+## Getting started
+
+Requires Node.js 18 or newer.
+
+```sh
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Other scripts:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+| Command | What it does |
+|---|---|
+| `npm run build` | Type-check and build into `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint |
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Project structure
+
+```
+src/
+├── App.tsx                 # Routes
+├── context/
+│   └── UserContext.tsx     # Register, login, logout; localStorage persistence
+├── components/
+│   ├── landing/            # Landing page, header and sections
+│   ├── auth/               # Login and sign-up pages and form
+│   └── dashboard/          # Features page and dashboard
+├── shared/components/      # Footer
+└── styles/                 # Component, layout and variable stylesheets
 ```
